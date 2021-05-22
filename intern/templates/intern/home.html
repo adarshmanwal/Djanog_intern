@@ -13,6 +13,16 @@
       {% csrf_token %}
         <fieldset>
           <legend>Person Form</legend>
+          {% if success == 1 %}
+          <div class="alert alert-success" role="alert">
+            Data saved successfully. Navigate to persons page to see data.
+          </div>
+          {% endif %}
+          {% if error == 1 %}
+          <div class="alert alert-danger" role="alert">
+            There is error saving your data, plese fill all fields and try again!!
+          </div>
+          {% endif %}
           <div class="mb-3">
             <label for="disabledTextInput" class="form-label">NAME</label>
             <input type="text" id="name" class="form-control" name='Your_name' placeholder="Enter Your name....">
@@ -25,22 +35,22 @@
           <div class="mb-3" id="selector">
               <label >Country</label>
               <select name='country' onChange="getState(this.value)" class="form-select" aria-label="Default select example">
-                <option selected>Select Your country</option>
+                <option value='' selected>Select Your country</option>
                 {% for country in countries %}
-                    <option value="{{country.id}}">{{country.name}}</option>
+                    <option value="{{country.name}}">{{country.name}}</option>
                 {% endfor %}
               </select>
           </div>
           <div class="mb-3" id="statediv">
             <label>State</label>
             <select name='state' class="form-select" aria-label="Default select example">
-              <option selected>Select your state</option>
+              <option value='' selected>Select your state</option>
             </select>
              </div>
              <div class="mb-3" id="citydiv">
               <label >City</label>
               <select class="form-select" name='city' aria-label="Default select example">
-                <option selected>Select your city</option>
+                <option value="" selected>Select your city</option>
               </select>
                </div>
              <input class="btn btn-primary" type="submit" value="Submit">
