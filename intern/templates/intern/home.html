@@ -9,22 +9,22 @@
   <!-- form Starts hear -->
   <div class="container my-4" >
     
-    <form  method= "get">
+    <form  method= "post">
       {% csrf_token %}
         <fieldset>
           <legend>Person Form</legend>
           <div class="mb-3">
             <label for="disabledTextInput" class="form-label">NAME</label>
-            <input type="text" id="name" class="form-control" name='Your' placeholder="Enter Your name....">
+            <input type="text" id="name" class="form-control" name='Your_name' placeholder="Enter Your name....">
           </div>
           
           <div class="mb-3">
             <label for="disabledTextInput" class="form-label">BirthDate</label>
-            <input type="date" id="birthDate" class="form-control" placeholder="Enter Your Birthdate">
+            <input type="date" id="birthDate" name='birthDate' class="form-control" placeholder="Enter Your Birthdate">
           </div>
           <div class="mb-3" id="selector">
               <label >Country</label>
-              <select onChange="getState(this.value)" class="form-select" aria-label="Default select example">
+              <select name='country' onChange="getState(this.value)" class="form-select" aria-label="Default select example">
                 <option selected>Select Your country</option>
                 {% for country in countries %}
                     <option value="{{country.id}}">{{country.name}}</option>
@@ -33,13 +33,13 @@
           </div>
           <div class="mb-3" id="statediv">
             <label>State</label>
-            <select class="form-select" aria-label="Default select example">
+            <select name='state' class="form-select" aria-label="Default select example">
               <option selected>Select your state</option>
             </select>
              </div>
              <div class="mb-3" id="citydiv">
               <label >City</label>
-              <select class="form-select" aria-label="Default select example">
+              <select class="form-select" name='city' aria-label="Default select example">
                 <option selected>Select your city</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>

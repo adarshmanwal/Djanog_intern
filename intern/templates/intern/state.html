@@ -1,5 +1,5 @@
 <label>State</label>
-<select onchange="getCity(this.value)" class="form-select" aria-label="Default select example">
+<select name='state' onchange="getCity(this.value)" class="form-select" aria-label="Default select example">
     {%for state in states%}
         <option value="{{state.id}}" >{{state.name}}</option>
     {%endfor%}
