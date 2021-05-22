@@ -31,7 +31,7 @@
               <select class="form-select" aria-label="Default select example">
                 <option selected>Select Your country</option>
                 {% for country in countries %}
-                    <option value="{{country}}">{{country}}</option>
+                    <option value="{{country.id}}">{{country.name}}</option>
                 {% endfor %}
               </select>
           </div>
