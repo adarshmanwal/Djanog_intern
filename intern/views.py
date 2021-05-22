@@ -16,7 +16,7 @@ def home(request):
         city=request.POST['city']
         ins=Post(name=name,birthDate=birthdate,country=country,state=state,city=city)
         ins.save()
-        
+
     # print("this is the data we get",request.POST)
     return render(request,'intern/home.html', {'countries': countries})
 
@@ -30,6 +30,11 @@ def city_view(request,id):
     cities = City.objects.filter(state_id=id)
     return render(request, 'intern/city.html', {'cities': cities})
 
+# List of persons
+def persons_view(request):
+    persons = Post.objects.all()
+    return render(request, 'intern/persons.html', {'persons': persons})
+
 def about(request):
     return render(request, 'intern/about.html')
-    
+
