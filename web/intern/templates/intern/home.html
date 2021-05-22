@@ -1,0 +1,52 @@
+{% extends "intern/base.html" %}
+
+{% block content %}
+<div class="container my-3">
+    <h1>SIMPLE ERP</h1>
+    <hr>
+  </div>
+
+  <!-- form Starts hear -->
+  <div class="container my-4" >
+    <form>
+        <fieldset>
+          <legend>Person Form</legend>
+          <div class="mb-3">
+            <label for="disabledTextInput" class="form-label">NAME</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter Your name....">
+          </div>
+          
+          <div class="mb-3">
+            <label for="disabledTextInput" class="form-label">BirthDate</label>
+            <input type="date" id="birthDate" class="form-control" placeholder="Enter Your Birthdate">
+          </div>
+
+          <!-- <div class="mb-3">
+            <label for=""></label>
+          </div> -->
+
+
+          <div class="mb-3" id="selector">
+              <label >Country</label>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Select Your country</option>
+                {% for country in countries %}
+                    <option value="{{country}}">{{country}}</option>
+                {% endfor %}
+              </select>
+          </div>
+          <div class="mb-3" id="selector">
+            <label >City</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Select your city</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+             </div>
+             <input class="btn btn-primary" type="submit" value="Submit">
+        </fieldset>
+      </form>
+  </div>
+
+  {% endblock %}
