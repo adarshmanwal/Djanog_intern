@@ -8,24 +8,20 @@
 
   <!-- form Starts hear -->
   <div class="container my-4" >
-    <form>
+    
+    <form  method= "get">
+      {% csrf_token %}
         <fieldset>
           <legend>Person Form</legend>
           <div class="mb-3">
             <label for="disabledTextInput" class="form-label">NAME</label>
-            <input type="text" id="name" class="form-control" placeholder="Enter Your name....">
+            <input type="text" id="name" class="form-control" name='Your' placeholder="Enter Your name....">
           </div>
           
           <div class="mb-3">
             <label for="disabledTextInput" class="form-label">BirthDate</label>
             <input type="date" id="birthDate" class="form-control" placeholder="Enter Your Birthdate">
           </div>
-
-          <!-- <div class="mb-3">
-            <label for=""></label>
-          </div> -->
-
-
           <div class="mb-3" id="selector">
               <label >Country</label>
               <select class="form-select" aria-label="Default select example">
@@ -36,7 +32,7 @@
               </select>
           </div>
           <div class="mb-3" id="selector">
-            <label >City</label>
+            <label >State</label>
             <select class="form-select" aria-label="Default select example">
               <option selected>Select your city</option>
               <option value="1">One</option>
@@ -44,9 +40,23 @@
               <option value="3">Three</option>
             </select>
              </div>
+             <div class="mb-3" id="selector">
+              <label >City</label>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Select your city</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+               </div>
              <input class="btn btn-primary" type="submit" value="Submit">
         </fieldset>
       </form>
+      <!-- <form action = "" method = "get">
+        <label for="your_name">Your name: </label>
+        <input id="your_name" type="text" name="your_name">
+        <input type="submit" value="OK">
+    </form> -->
   </div>
 
   {% endblock %}
