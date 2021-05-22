@@ -24,23 +24,20 @@
           </div>
           <div class="mb-3" id="selector">
               <label >Country</label>
-              <select class="form-select" aria-label="Default select example">
+              <select onChange="getState(this.value)" class="form-select" aria-label="Default select example">
                 <option selected>Select Your country</option>
                 {% for country in countries %}
                     <option value="{{country.id}}">{{country.name}}</option>
                 {% endfor %}
               </select>
           </div>
-          <div class="mb-3" id="selector">
-            <label >State</label>
+          <div class="mb-3" id="statediv">
+            <label>State</label>
             <select class="form-select" aria-label="Default select example">
-              <option selected>Select your city</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option selected>Select your state</option>
             </select>
              </div>
-             <div class="mb-3" id="selector">
+             <div class="mb-3" id="citydiv">
               <label >City</label>
               <select class="form-select" aria-label="Default select example">
                 <option selected>Select your city</option>

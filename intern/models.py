@@ -17,3 +17,8 @@ class State(models.Model):
     id=models.IntegerField(primary_key=True)
     name=models.CharField(max_length=1000)
     country_id=models.IntegerField()
+
+class City(models.Model):
+    id=models.IntegerField(primary_key=True)
+    name=models.CharField(max_length=1000)
+    state_id=models.IntegerField()
